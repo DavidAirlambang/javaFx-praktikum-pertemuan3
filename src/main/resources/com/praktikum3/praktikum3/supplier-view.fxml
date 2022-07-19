@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="376.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.praktikum3.praktikum3.controller.SupplierController">
+    <children>
+        <MenuBar prefHeight="26.0" prefWidth="497.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Show Supplier Management" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <VBox layoutY="26.0" prefHeight="360.0" prefWidth="482.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="30.0">
+            <children>
+                <GridPane prefHeight="102.0" prefWidth="462.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.199951171875" minWidth="10.0" prefWidth="180.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.79999999999995" minWidth="10.0" prefWidth="400.79999999999995" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="ID">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="idSupplier" prefHeight="26.0" prefWidth="382.0" GridPane.columnIndex="1" />
+                        <Label layoutX="10.0" layoutY="17.0" text="Nama" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="namaSupplier" layoutX="238.0" layoutY="14.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="52.0" text="Alamat" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                  <TextField fx:id="alamatSupplier" layoutX="141.0" layoutY="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+                <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="482.0">
+                    <children>
+                        <Button fx:id="saveSupplier" mnemonicParsing="false" onAction="#saveSuppliler" text="Save">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="resetSupplier" layoutX="440.0" layoutY="10.0" mnemonicParsing="false" onAction="#resetSupplier" text="Reset">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="updateSupplier" layoutX="440.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateSupplier" text="Update" />
+                    </children>
+                </HBox>
+                <TableView fx:id="tableSupplier" onMouseClicked="#selectedSupplier" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                        <TableColumn fx:id="idColSupplier" prefWidth="150.0" text="ID" />
+                        <TableColumn fx:id="namaColSupplier" prefWidth="150.0" text="Nama Supplier" />
+                        <TableColumn fx:id="alamatColSupplier" prefWidth="150.0" text="Alamat Supplier" />
+                        <TableColumn prefWidth="30.0" text="+" />
+                    </columns>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
